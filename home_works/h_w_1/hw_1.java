@@ -1,7 +1,5 @@
 package home_works.h_w_1;
 
-import java.util.Arrays;
-
 public class hw_1 {
 
     public static void main(String[] args) {
@@ -31,6 +29,10 @@ public class hw_1 {
         // System.out.println(Arrays.toString(rightShiftByIndex(nums1, 2)));
         // String s = " the sky is blue ";
         // System.out.println(reverseWords(s));
+        // String s = "A man, a plan, a canal: Panama";
+
+        // String s = "_";
+        // System.out.println(isPalindrome(s));
     }
 
     public static String mergeAlternately(String word1, String word2) {
@@ -96,7 +98,7 @@ public class hw_1 {
                 count++;
             }
         }
-        System.out.println(Arrays.toString(nums));
+        // System.out.println(Arrays.toString(nums));
         return count;
     }
 
@@ -118,7 +120,6 @@ public class hw_1 {
         int k = 0;
         int mTemp = m;
         for (int i = 0; i < nums1.length; i++) {
-
             if (k < nums2.length) {
                 if (nums1[i] < nums2[k] && i < mTemp) {
                     continue;
@@ -160,8 +161,9 @@ public class hw_1 {
         }
         int countSpaces = 0;
         for (int i = 0; i < words.length(); i++) {
-            if (words.charAt(i) == ' ')
+            if (words.charAt(i) == ' ') {
                 countSpaces++;
+            }
         }
 
         int count = 0;
@@ -189,4 +191,33 @@ public class hw_1 {
         return words.toString();
     }
 
+    public static boolean isPalindrome(String s) {
+        /*
+         * A phrase is a palindrome if, after converting all uppercase letters into
+         * lowercase letters and removing all non-alphanumeric characters, it reads the
+         * same forward and backward. Alphanumeric characters include letters and
+         * numbers.
+         * 
+         * Given a string s, return true if it is a palindrome, or false otherwise.
+         */
+
+        boolean isTrue = true;
+        int i = 0;
+        int j = s.length() - 1;
+        while (i < j) {
+            while (!Character.isLetterOrDigit(s.charAt(i)) && i < j) {
+                i++;
+            }
+            while (!Character.isLetterOrDigit(s.charAt(j)) && i < j) {
+                j--;
+            }
+            if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+
+        return isTrue;
+    }
 }
