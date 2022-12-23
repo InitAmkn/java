@@ -1,5 +1,7 @@
 package home_works.h_w_1;
 
+import java.util.Arrays;
+
 public class hw_1 {
 
     public static void main(String[] args) {
