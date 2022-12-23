@@ -16,10 +16,10 @@ public class hw_1 {
         // int m = 4;
         // int n = 5;
 
-        int[] nums1 = { 1 };
-        int[] nums2 = {};
-        int m = 1;
-        int n = 0;
+        // int[] nums1 = { 1 };
+        // int[] nums2 = {};
+        // int m = 1;
+        // int n = 0;
 
         // int[] nums1 = { 0 };
         // int[] nums2 = { 1 };
@@ -27,9 +27,10 @@ public class hw_1 {
         // int[] nums1 = { 1, 2, 3, 0, 0, 0 };
         // int[] nums2 = { 2, 5, 6 };
 
-        System.out.println(Arrays.toString(merge(nums1, m, nums2, n)));
+        // System.out.println(Arrays.toString(merge(nums1, m, nums2, n)));
         // System.out.println(Arrays.toString(rightShiftByIndex(nums1, 2)));
-
+        // String s = " the sky is blue ";
+        // System.out.println(reverseWords(s));
     }
 
     public static String mergeAlternately(String word1, String word2) {
@@ -144,4 +145,48 @@ public class hw_1 {
         }
         return arr;
     }
+
+    public static String reverseWords(String s) {
+        StringBuilder words = new StringBuilder();
+        words.append(s);
+        while (words.charAt(0) == ' ') {
+            words.deleteCharAt(0);
+        }
+        while (words.charAt(words.length() - 1) == ' ') {
+            words.deleteCharAt(words.length() - 1);
+        }
+        while (words.indexOf("  ") != -1) {
+            words.deleteCharAt(words.indexOf("  "));
+        }
+        int countSpaces = 0;
+        for (int i = 0; i < words.length(); i++) {
+            if (words.charAt(i) == ' ')
+                countSpaces++;
+        }
+
+        int count = 0;
+        int indexStartWord = 0;
+        int i = 0;
+
+        int[] placeSpace = new int[countSpaces];
+
+        while (i < countSpaces) {
+            while (words.charAt(words.length() - 1) != ' ') {
+                words.insert(indexStartWord, words.charAt(words.length() - 1));
+                words.deleteCharAt(words.length() - 1);
+                count++;
+            }
+            if (words.charAt(words.length() - 1) == ' ') {
+                words.deleteCharAt(words.length() - 1);
+            }
+            indexStartWord = count;
+            placeSpace[i] = indexStartWord;
+            i++;
+        }
+        for (int j = placeSpace.length - 1; j >= 0; j--) {
+            words.insert(placeSpace[j], " ");
+        }
+        return words.toString();
+    }
+
 }
