@@ -1,8 +1,8 @@
-package home_works.h_w_1;
+package home_works.h_w_old;
 
 import java.util.Arrays;
 
-public class hw_1 {
+public class h_w_0 {
 
     public static void main(String[] args) {
         // String x = mergeAlternately("afgdsf", "qwe"); // h_w_1_1
