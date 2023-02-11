@@ -81,8 +81,4 @@ public class h_w_5_1 {
         }
     }
 
-    public static void directoryController(Integer telephone, String name, HashMap<Integer, String> directory) {
-
-    }
-
 }

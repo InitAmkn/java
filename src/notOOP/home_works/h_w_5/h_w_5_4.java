@@ -46,6 +46,8 @@ public class h_w_5_4 {
             int j = r.nextInt(map.length);
             if (isPossiblePut(i, j, map)) {
                 map[i][j] = 1;
+                // printMap(map);
+                // System.out.println();
             }
             if (i == map.length - 1 && j == map[i].length - 1) {
                 if (QueensCounter(map) < map.length) {
@@ -78,7 +80,6 @@ public class h_w_5_4 {
                     return false;
                 }
             }
-
             if (map[x][i] != 0) {
                 return false;
             }
@@ -89,22 +90,23 @@ public class h_w_5_4 {
 
         }
         return true;
-
     }
 
     public static void printMap(Integer[][] map) {
-
         for (int i = 0; i < map.length; i++) {
+            System.out.print(" _");
+        }
+        System.out.println();
+        for (int i = 0; i < map.length; i++) {
+
             for (int j = 0; j < map[i].length; j++) {
+
                 System.out.print("|");
                 if (map[i][j] == 0) {
                     System.out.print("_");
                 }
                 if (map[i][j] == 1) {
                     System.out.print("x");
-                }
-                if (map[i][j] == 2) {
-                    System.out.print(".");
                 }
             }
             System.out.print("|");
