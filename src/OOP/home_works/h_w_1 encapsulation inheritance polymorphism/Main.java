@@ -33,6 +33,6 @@ public class Main {
         System.out.println(machineTwo.getProduct("Зеленый чай", 500, 50));
 
         // непоняятно как сделать так чтобы для класса VendingMachine
-        // тоже работала перегрузка
+        // тоже работала перегрузка getProduct
     }
 }
