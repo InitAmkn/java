@@ -12,4 +12,16 @@ public class DrinkVendingMachine extends VendingMachine {
         drinkList.add(dr);
     }
 
+    public Drink getProduct(String name, int volume) {
+        for (var el : productList) {
+            if (el instanceof Drink) {
+                Drink ht = (Drink) el;
+                if (ht.getName().equals(name) && ht.getVolume() == volume) {
+                    return ht;
+                }
+            }
+        }
+        return null;
+
+    }
 }

@@ -1,8 +1,9 @@
+package Seminar1;
 
 import java.util.ArrayList;
 
 public class VendingMachine {
-    private String name;
+    private String name = "default";
     protected ArrayList<Product> productList;
 
     public VendingMachine(String firstMachine) {
@@ -14,7 +15,7 @@ public class VendingMachine {
         productList.add(product);
     }
 
-    public Product getProduct(String name) {
+    public Product returnProduct(String name) {
         for (Product el : productList) {
             if (el.getName().equals(name))
                 return el;

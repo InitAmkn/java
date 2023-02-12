@@ -14,22 +14,25 @@ public class Main {
      * 
      */
     public static void main(String[] args) {
-        var machine = new VendingMachine("first machine");
-
+        var machineOne = new VendingMachine("first machine");
+        var machineTwo = new HotDrinkVendingMachine("second machine");
         Product first = new Product("орешки", 100);
-        Drink second = new Drink("газировка", 150, 500);
-        HotDrink third = new HotDrink("Зеленый чай", 150, 500, 50);
-        HotDrink fourth = new HotDrink("Латте", 150, 500, 50);
-        HotDrink fifth = new HotDrink("Зеленый чай", 100, 350, 50);
+        Product second = new Drink("газировка", 150, 500);
+        Product third = new HotDrink("Зеленый чай", 150, 500, 500);
+        Product fourth = new HotDrink("Латте", 150, 500, 50);
+        Product fifth = new HotDrink("Зеленый чай", 100, 500, 50);
 
-        machine.addProduct(first);
-        machine.addProduct(second);
-        machine.addProduct(third);
-        machine.addProduct(fourth);
-        machine.addProduct(fifth);
+        machineOne.addProduct(first);
+        machineOne.addProduct(second);
+        machineOne.addProduct(third);
+        machineOne.addProduct(fourth);
+        machineTwo.addProduct(fifth);
 
-        System.out.println(machine.getProduct("орешки"));
-        System.out.println(machine.getProduct("газировка", 500));
-        System.out.println(machine.getProduct("Зеленый чай", 350, 50));
+        System.out.println(machineOne.getProduct("орешки"));
+        // System.out.println(machine.getProduct("газировка", 500));
+        System.out.println(machineTwo.getProduct("Зеленый чай", 500, 50));
+
+        // не поняятно как сделать так чтобы для класса VendingMachine
+        // тоже работала перегрузка
     }
 }
