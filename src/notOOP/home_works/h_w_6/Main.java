@@ -72,20 +72,19 @@ public class Main {
                 "1 - Бренд",
                 "2 - Цена (по убыванию)"
         };
-
-        printMenu(menu_1);
-        switch (iScanner.nextLine()) {
-            case "1":
-                printMenu(menu_1_1);
-                printFindInfo(allNotebooks, iScanner.nextLine());
-                break;
-            case "2":
-                printMenu(menu_1_2);
-                printSortedInfo(allNotebooks, iScanner.nextLine());
-                break;
+        while (true) {
+            printMenu(menu_1);
+            switch (iScanner.nextLine()) {
+                case "1":
+                    printMenu(menu_1_1);
+                    printFindInfo(allNotebooks, iScanner.nextLine());
+                    break;
+                case "2":
+                    printMenu(menu_1_2);
+                    printSortedInfo(allNotebooks, iScanner.nextLine());
+                    break;
+            }
         }
-
-        iScanner.close();
     }
 
     public static void printSortedInfo(LinkedList<Notebook> allNotebooks, String index) {
