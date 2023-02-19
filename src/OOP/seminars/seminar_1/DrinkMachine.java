@@ -1,4 +1,4 @@
-package Seminar1;
+package OOP.seminars.seminar_1;
 
 import java.util.ArrayList;
 

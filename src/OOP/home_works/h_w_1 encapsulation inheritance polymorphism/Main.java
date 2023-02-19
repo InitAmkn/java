@@ -14,8 +14,8 @@ public class Main {
      * 
      */
     public static void main(String[] args) {
-        var machineOne = new VendingMachine("first machine");
-        var machineTwo = new HotDrinkVendingMachine("second machine");
+        VendingMachine machineOne = new VendingMachine("first machine");
+        HotDrinkVendingMachine machineTwo = new HotDrinkVendingMachine("second machine");
         Product first = new Product("орешки", 100);
         Product second = new Drink("газировка", 150, 500);
         Product third = new HotDrink("Зеленый чай", 150, 500, 500);
@@ -29,7 +29,7 @@ public class Main {
         machineTwo.addProduct(fifth);
 
         System.out.println(machineOne.getProduct("орешки"));
-        // System.out.println(machine.getProduct("газировка", 500));
+        System.out.println(machineOne.getProduct("газировка", 500));
         System.out.println(machineTwo.getProduct("Зеленый чай", 500, 50));
 
         // непоняятно как сделать так чтобы для класса VendingMachine

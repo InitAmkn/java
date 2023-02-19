@@ -2,11 +2,11 @@
 public class Drink extends Product {
     protected int volume;
 
-    Drink(String name, int price) {
+    public Drink(String name, int price) {
         super(name, price);
     }
 
-    Drink(String name, int price, int volume) {
+    public Drink(String name, int price, int volume) {
         super(name, price);
         this.volume = volume;
     }

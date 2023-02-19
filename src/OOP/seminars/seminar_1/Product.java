@@ -1,29 +1,36 @@
-package Seminar1;
+package OOP.seminars.seminar_1;
 
 public class Product {
     String name;
     int price;
-    Product(String name, int price){
+
+    Product(String name, int price) {
         this.name = name;
         this.price = price;
     }
-    public void consume(){
+
+    public void consume() {
         System.out.println("Продукт потреблен");
     }
-    public String getName(){
+
+    public String getName() {
         return this.name;
     }
-    public Integer getPrice(){
+
+    public Integer getPrice() {
         return this.price;
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-    public void setPrice(Integer price){
+
+    public void setPrice(Integer price) {
         this.price = price;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return name + ": " + price;
     }
 }
