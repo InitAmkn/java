@@ -42,13 +42,13 @@ public class WolfCage implements AnimalCage {
         StringBuilder wolfs = new StringBuilder();
         for (Wolf el : wolfsInCage) {
             wolfs.append(el.toString());
-            wolfs.append("- За решеткой");
+            wolfs.append(" - За решеткой");
             wolfs.append("\n");
         }
         return wolfs.toString();
     }
 
-    public void sortByManeVolume() {
+    public void sortByWeightAndAge() {
         Collections.sort(wolfsInCage, new WolfComparator());
     }
 

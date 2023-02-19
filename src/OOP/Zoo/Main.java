@@ -15,7 +15,8 @@ public class Main {
         ArrayList<Wolf> wolfs = WolfsFactory.createLions(10);
 
         WolfCage wolfsInCage = new WolfCage(wolfs);
-        wolfsInCage.sortByManeVolume();
+        wolfsInCage.sortByWeightAndAge();
+        ;
         // for (Lion el : lionsInCage.getAll()) {
         // System.out.println(el.toString());
         // }

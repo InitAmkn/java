@@ -42,7 +42,7 @@ public class LionCage implements AnimalCage {
         StringBuilder lions = new StringBuilder();
         for (Lion el : lionsInCage) {
             lions.append(el.toString());
-            lions.append("- За решеткой\n");
+            lions.append(" - За решеткой\n");
         }
         return lions.toString();
     }

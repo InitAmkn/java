@@ -37,6 +37,10 @@ public abstract class Animal {
         return countLimbs;
     }
 
+    public int getWeight() {
+        return weight;
+    }
+
     public void setCountLimbs(int countLimbs) {
         this.countLimbs = countLimbs;
     }
