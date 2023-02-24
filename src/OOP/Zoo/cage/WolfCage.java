@@ -64,7 +64,7 @@ public class WolfCage implements AnimalCage<Wolf> {
     }
 
     @Override
-    public Animal releaseAnimalFromCage() {
+    public Wolf releaseAnimalFromCage() {
         if (wolfsInCage.size() > 0) {
             Wolf wolfRemoved = wolfsInCage.get(0);
             wolfsInCage.remove(0);

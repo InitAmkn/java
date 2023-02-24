@@ -92,3 +92,8 @@ ClassArrays<?> byteArray = new ClassArrays<Byte>();
 - создать класс AnimalUtils и реализовать в нём статический метод 
 для сортировки списка животных по возрасту
 <T extends Animal> List<T> sortAnimals (List<T> animalList)
+
+ДЗ - 4:
+Выполнить все задания из семинара 4
+Имплементировать обобщенный интерфейс AnimalCage в классах SnakeCage и WolfCage
+Переписать классы из ДЗ1 с использование дженериков

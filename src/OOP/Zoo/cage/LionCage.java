@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import OOP.zoo.animals.Animal;
 import OOP.zoo.animals.Lion;
 import OOP.zoo.animals.Comparators.LionComparator;
 
@@ -62,7 +61,7 @@ public class LionCage implements AnimalCage<Lion> {
     }
 
     @Override
-    public Animal releaseAnimalFromCage() {
+    public Lion releaseAnimalFromCage() {
         if (lionsInCage.size() > 0) {
             Lion lionRemoved = lionsInCage.get(0);
             lionsInCage.remove(0);

@@ -2,6 +2,8 @@
 import product.Drink;
 import product.HotDrink;
 import product.Product;
+import vendingMachine.DrinkVendingMashine;
+import vendingMachine.HotDrinkVendingMashine;
 import vendingMachine.VendingMachine;
 
 public class Main {
@@ -20,8 +22,8 @@ public class Main {
      */
     public static <T> void main(String[] args) {
         VendingMachine<Product> machineOne = new VendingMachine<>("Product machine 1");
-        VendingMachine<Drink> machineTwo = new VendingMachine<>("Drink machine 1");
-        VendingMachine<HotDrink> machinethree = new VendingMachine<>("Hot Drink machine 3");
+        DrinkVendingMashine<Drink> machineTwo = new DrinkVendingMashine<>("Drink machine 1");
+        HotDrinkVendingMashine<HotDrink> machinethree = new HotDrinkVendingMashine<>("Hot Drink machine 1");
         Product first = new Product("орешки", 100);
         Drink second = new Drink("газировка", 150, 500);
         HotDrink third = new HotDrink("Зеленый чай", 150, 500, 500);
@@ -36,7 +38,7 @@ public class Main {
 
         System.out.println(machineOne.getProduct("орешки"));
         System.out.println(machineTwo.getProduct("газировка"));
-        System.out.println(machineOne.getProduct("Зеленый чай", 500, 50));
+        System.out.println(machinethree.getProduct("Зеленый чай", 500, 50));
 
     }
 }

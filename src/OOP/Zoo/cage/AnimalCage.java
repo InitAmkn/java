@@ -13,7 +13,7 @@ public interface AnimalCage<T extends Animal> {
 
     public abstract LocalDate checkDateTheLastFeeding();
 
-    public abstract Animal releaseAnimalFromCage();
+    public abstract T releaseAnimalFromCage();
 
     // public abstract Time cleanCage();
 

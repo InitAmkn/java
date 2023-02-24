@@ -65,7 +65,7 @@ public class SnakeCage implements AnimalCage<Snake> {
     }
 
     @Override
-    public Animal releaseAnimalFromCage() {
+    public Snake releaseAnimalFromCage() {
         if (snakesInCage.size() > 0) {
             Snake snakeRemoved = snakesInCage.get(0);
             snakesInCage.remove(0);
