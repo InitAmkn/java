@@ -3,7 +3,7 @@ import product.Drink;
 import product.HotDrink;
 import product.Product;
 import vendingMachine.DrinkVendingMachine;
-import vendingMachine.HotDrinkVendingMashine;
+import vendingMachine.HotDrinkVendingMachine;
 import vendingMachine.VendingMachine;
 
 public class Main {
@@ -23,7 +23,7 @@ public class Main {
     public static <T> void main(String[] args) {
         VendingMachine<Product> machineOne = new VendingMachine<>("Product machine 1");
         DrinkVendingMachine<Drink> machineTwo = new DrinkVendingMachine<>("Drink machine 1");
-        HotDrinkVendingMashine<HotDrink> machinethree = new HotDrinkVendingMashine<>("Hot Drink machine 1");
+        HotDrinkVendingMachine<HotDrink> machinethree = new HotDrinkVendingMachine<>("Hot Drink machine 1");
         Product first = new Product("орешки", 100);
         Drink second = new Drink("газировка", 150, 500);
         HotDrink third = new HotDrink("Зеленый чай", 150, 500, 500);
