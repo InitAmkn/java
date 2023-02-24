@@ -1,19 +1,15 @@
-package OOP.Zoo.animals;
-
-import javax.xml.crypto.Data;
-
-import java.time.LocalDate;
+package OOP.zoo.animals;
 
 public class Lion extends Animal {
     private int maneVolume;
 
-    public static final int MAX_WEIGHT = 50;
+    public static final double MAX_WEIGHT = 50;
     public static final String TYPE = "Lion";
 
     public Lion(String name,
             int yearBirth,
             int countLimbs,
-            int weight,
+            double weight,
             int maneVolume) {
         super(name, yearBirth, countLimbs, weight);
         this.maneVolume = maneVolume;
@@ -34,7 +30,7 @@ public class Lion extends Animal {
     }
 
     @Override
-    public int getMaxWeight() {
+    public double getMaxWeight() {
         return MAX_WEIGHT;
     }
 

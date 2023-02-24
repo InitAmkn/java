@@ -1,4 +1,4 @@
-package OOP.Zoo.animals;
+package OOP.zoo.animals;
 
 public class Snake extends Animal {
 
@@ -9,11 +9,15 @@ public class Snake extends Animal {
     public Snake(String name,
             int yearBirth,
             int countLimbs,
-            int weight,
+            double weight,
             int bodyLength) {
 
         super(name, yearBirth, countLimbs, weight);
         this.bodyLength = bodyLength;
+    }
+
+    public int getBodyLength() {
+        return bodyLength;
     }
 
     public void setBodyLength(int bodyLength) {
@@ -26,7 +30,7 @@ public class Snake extends Animal {
     }
 
     @Override
-    public int getMaxWeight() {
+    public double getMaxWeight() {
         return MAX_WEIGHT;
     }
 

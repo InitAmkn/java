@@ -1,15 +1,17 @@
-package OOP.Zoo.cage;
+package OOP.zoo.cage;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import OOP.Zoo.Comparators.WolfComparator;
-import OOP.Zoo.animals.Animal;
-import OOP.Zoo.animals.Wolf;
+import OOP.zoo.animals.Animal;
+import OOP.zoo.animals.Wolf;
+import OOP.zoo.animals.Comparators.WolfComparator;
 
-public class WolfCage implements AnimalCage {
+public class WolfCage implements AnimalCage<Wolf> {
 
     private ArrayList<Wolf> wolfsInCage;
+    private LocalDate dateFeed;
 
     public WolfCage() {
         this.wolfsInCage = new ArrayList<Wolf>();
@@ -20,7 +22,7 @@ public class WolfCage implements AnimalCage {
     }
 
     @Override
-    public void addAnimal(Animal animal) {
+    public void addAnimal(Wolf animal) {
         if (animal instanceof Wolf) {
             wolfsInCage.add((Wolf) animal);
         }
@@ -32,9 +34,18 @@ public class WolfCage implements AnimalCage {
     }
 
     @Override
-    public void deliverFood(int weightFood) {
-        // TODO Auto-generated method stub
+    public LocalDate feed(double weightFoodKG) {
+        double foodForOne = weightFoodKG / wolfsInCage.size();
+        for (Wolf el : wolfsInCage) {
+            el.feed(foodForOne);
+        }
+        dateFeed = LocalDate.now();
+        return dateFeed;
+    }
 
+    @Override
+    public LocalDate checkDateTheLastFeeding() {
+        return dateFeed;
     }
 
     @Override

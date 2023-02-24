@@ -1,15 +1,17 @@
-package OOP.Zoo.cage;
+package OOP.zoo.cage;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import OOP.Zoo.Comparators.LionComparator;
-import OOP.Zoo.animals.Animal;
-import OOP.Zoo.animals.Lion;
+import OOP.zoo.animals.Animal;
+import OOP.zoo.animals.Lion;
+import OOP.zoo.animals.Comparators.LionComparator;
 
-public class LionCage implements AnimalCage {
+public class LionCage implements AnimalCage<Lion> {
 
     private ArrayList<Lion> lionsInCage;
+    private LocalDate dateFeed;
 
     public LionCage() {
         this.lionsInCage = new ArrayList<Lion>();
@@ -20,11 +22,10 @@ public class LionCage implements AnimalCage {
     }
 
     @Override
-    public void addAnimal(Animal animal) {
+    public void addAnimal(Lion animal) {
         if (animal instanceof Lion) {
             lionsInCage.add((Lion) animal);
         }
-
     }
 
     public ArrayList<Lion> getAll() {
@@ -32,9 +33,18 @@ public class LionCage implements AnimalCage {
     }
 
     @Override
-    public void deliverFood(int weightFood) {
-        // TODO Auto-generated method stub
+    public LocalDate feed(double weightFoodKG) {
+        double foodForOne = weightFoodKG / lionsInCage.size();
+        for (Lion el : lionsInCage) {
+            el.feed(foodForOne);
+        }
+        dateFeed = LocalDate.now();
+        return dateFeed;
+    }
 
+    @Override
+    public LocalDate checkDateTheLastFeeding() {
+        return dateFeed;
     }
 
     @Override
@@ -60,4 +70,5 @@ public class LionCage implements AnimalCage {
         }
         return null;
     }
+
 }

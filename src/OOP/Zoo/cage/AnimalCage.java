@@ -1,15 +1,23 @@
-package OOP.Zoo.cage;
+package OOP.zoo.cage;
 
-import OOP.Zoo.animals.Animal;
+import java.time.LocalDate;
+import java.util.List;
 
-public interface AnimalCage {
+import OOP.zoo.animals.Animal;
 
-    public abstract void addAnimal(Animal animal);
+public interface AnimalCage<T extends Animal> {
 
-    public abstract void deliverFood(int weightFood);
+    public abstract void addAnimal(T animal);
+
+    public abstract LocalDate feed(double weightFoodKG);
+
+    public abstract LocalDate checkDateTheLastFeeding();
 
     public abstract Animal releaseAnimalFromCage();
 
     // public abstract Time cleanCage();
 
+    default public List<T> sortByAge(List<T> animalList) {
+        return animalList;
+    }
 }

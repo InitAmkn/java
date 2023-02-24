@@ -1,4 +1,6 @@
 
+package product;
+
 public class Drink extends Product {
     protected int volume;
 

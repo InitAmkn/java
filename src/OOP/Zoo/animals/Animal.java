@@ -1,4 +1,4 @@
-package OOP.Zoo.animals;
+package OOP.zoo.animals;
 
 import java.time.LocalDate;
 
@@ -7,12 +7,12 @@ public abstract class Animal {
     protected String name;
     protected int yearBirth;
     protected int countLimbs;
-    protected int weight;
+    protected double weight;
 
     public Animal(String name,
             int yearBirth,
             int countLimbs,
-            int weight) {
+            double weight) {
 
         this.name = name;
         this.yearBirth = yearBirth;
@@ -37,7 +37,7 @@ public abstract class Animal {
         return countLimbs;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
@@ -49,7 +49,7 @@ public abstract class Animal {
         this.name = name;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
@@ -57,15 +57,16 @@ public abstract class Animal {
         this.yearBirth = yearBirth;
     }
 
-    public void feed(int foodWeight) {
+    public void feed(double foodWeight) {
         if (this.weight + foodWeight <= getMaxWeight()) {
             this.weight = weight + foodWeight;
         } else {
+            this.weight = getMaxWeight();
             System.out.println("Max weight exceeded");
         }
     }
 
     public abstract String getType();
 
-    public abstract int getMaxWeight();
+    public abstract double getMaxWeight();
 }

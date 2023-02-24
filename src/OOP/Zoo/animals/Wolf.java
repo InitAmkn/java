@@ -1,4 +1,4 @@
-package OOP.Zoo.animals;
+package OOP.zoo.animals;
 
 // Создать класс Wolf, наследника класса Animal.
 
@@ -10,7 +10,7 @@ public class Wolf extends Animal {
     public static final int MAX_WEIGHT = 20;
     public static final String TYPE = "Wolf";
 
-    public Wolf(String name, int yearBirth, int countLimbs, int weight) {
+    public Wolf(String name, int yearBirth, int countLimbs, double weight) {
         super(name, yearBirth, countLimbs, weight);
 
     }
@@ -21,7 +21,7 @@ public class Wolf extends Animal {
     }
 
     @Override
-    public int getMaxWeight() {
+    public double getMaxWeight() {
         return MAX_WEIGHT;
     }
 

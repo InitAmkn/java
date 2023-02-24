@@ -1,10 +1,10 @@
 package OOP.seminars.seminar_1;
 
 public class Product {
-    String name;
-    int price;
+    protected String name;
+    protected int price;
 
-    Product(String name, int price) {
+    protected Product(String name, int price) {
         this.name = name;
         this.price = price;
     }

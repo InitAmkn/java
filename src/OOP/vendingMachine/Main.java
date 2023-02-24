@@ -1,4 +1,9 @@
 
+import product.Drink;
+import product.HotDrink;
+import product.Product;
+import vendingMachine.VendingMachine;
+
 public class Main {
     /*
      * Создать наследника реализованного класса HotDrink с дополнительным полем int
@@ -13,24 +18,25 @@ public class Main {
      * Все вышеуказанное создать согласно принципам ООП пройдённым на семинаре
      * 
      */
-    public static void main(String[] args) {
-        VendingMachine machineOne = new VendingMachine("first machine");
-        HotDrinkVendingMachine machineTwo = new HotDrinkVendingMachine("second machine");
+    public static <T> void main(String[] args) {
+        VendingMachine<Product> machineOne = new VendingMachine<>("Product machine 1");
+        VendingMachine<Drink> machineTwo = new VendingMachine<>("Drink machine 1");
+        VendingMachine<HotDrink> machinethree = new VendingMachine<>("Hot Drink machine 3");
         Product first = new Product("орешки", 100);
-        Product second = new Drink("газировка", 150, 500);
-        Product third = new HotDrink("Зеленый чай", 150, 500, 500);
-        Product fourth = new HotDrink("Латте", 150, 500, 50);
-        Product fifth = new HotDrink("Зеленый чай", 100, 500, 50);
+        Drink second = new Drink("газировка", 150, 500);
+        HotDrink third = new HotDrink("Зеленый чай", 150, 500, 500);
+        HotDrink fourth = new HotDrink("Латте", 150, 500, 50);
+        HotDrink fifth = new HotDrink("Зеленый чай", 100, 500, 50);
 
-        machineOne.addProduct(first);
-        machineOne.addProduct(second);
-        machineOne.addProduct(third);
-        machineOne.addProduct(fourth);
-        machineTwo.addProduct(fifth);
+        machineOne.add(first);
+        machineTwo.add(second);
+        machinethree.add(third);
+        machinethree.add(fourth);
+        machinethree.add(fifth);
 
         System.out.println(machineOne.getProduct("орешки"));
-        System.out.println(machineOne.getProduct("газировка", 500));
-        System.out.println(machineTwo.getProduct("Зеленый чай", 500, 50));
+        System.out.println(machineTwo.getProduct("газировка"));
+        System.out.println(machinethree.getProduct("Зеленый чай", 500, 50));
 
         // непоняятно как сделать так чтобы для класса VendingMachine
         // тоже работала перегрузка getProduct
