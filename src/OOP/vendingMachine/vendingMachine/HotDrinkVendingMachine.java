@@ -3,9 +3,9 @@ package vendingMachine;
 import product.HotDrink;
 import product.Product;
 
-public class HotDrinkVendingMashine<T extends Product> extends DrinkVendingMashine<HotDrink> {
+public class HotDrinkVendingMachine<T extends Product> extends DrinkVendingMachine<HotDrink> {
 
-    public HotDrinkVendingMashine(String name) {
+    public HotDrinkVendingMachine(String name) {
         super(name);
     }
 
