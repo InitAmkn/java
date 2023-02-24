@@ -36,9 +36,7 @@ public class Main {
 
         System.out.println(machineOne.getProduct("орешки"));
         System.out.println(machineTwo.getProduct("газировка"));
-        System.out.println(machinethree.getProduct("Зеленый чай", 500, 50));
+        System.out.println(machineOne.getProduct("Зеленый чай", 500, 50));
 
-        // непоняятно как сделать так чтобы для класса VendingMachine
-        // тоже работала перегрузка getProduct
     }
 }

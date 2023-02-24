@@ -20,31 +20,31 @@ public class VendingMachine<T extends Product> {
     }
 
     public T getProduct(String name) {
-        for (var el : productList) {
+        for (T el : productList) {
             if (el.getName().equals(name))
                 return el;
         }
         return null;
     }
 
-    public T getProduct(String name, int volume) {
-        for (var el : productList) {
-            if (el instanceof T) {
+    public Drink getProduct(String name, int volume) {
+        for (T el : productList) {
+            if (el instanceof Drink) {
                 Drink ht = (Drink) el;
                 if (ht.getName().equals(name) && ht.getVolume() == volume) {
-                    return (T) ht;
+                    return ht;
                 }
             }
         }
         return null;
     }
 
-    public T getProduct(String name, int volume, int temperature) {
+    public HotDrink getProduct(String name, int volume, int temperature) {
         for (T el : productList) {
-            if (el instanceof T) {
+            if (el instanceof HotDrink) {
                 HotDrink ht = (HotDrink) el;
                 if (ht.getName().equals(name) && ht.getVolume() == volume && ht.getTemperature() == temperature) {
-                    return (T) ht;
+                    return ht;
                 }
             }
         }
@@ -52,7 +52,7 @@ public class VendingMachine<T extends Product> {
     }
 
     public void printProducts() {
-        for (var el : this.productList) {
+        for (T el : this.productList) {
             System.out.println(el);
         }
     }
