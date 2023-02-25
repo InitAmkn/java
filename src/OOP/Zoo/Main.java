@@ -3,12 +3,10 @@ package OOP.zoo;
 import java.util.ArrayList;
 
 import OOP.zoo.animalUtils.AnimalUtils;
-import OOP.zoo.animals.Lion;
 import OOP.zoo.animals.Wolf;
-import OOP.zoo.cage.LionCage;
 import OOP.zoo.cage.WolfCage;
-import OOP.zoo.factory.LionsFactory;
 import OOP.zoo.factory.WolfsFactory;
+import OOP.zoo.terminal.TerminalReader;
 
 public class Main {
 
@@ -26,6 +24,8 @@ public class Main {
         for (Wolf el : wolfs) {
             System.out.println(el.toString());
         }
+
+        TerminalReader.newTerminalReader(null).endLess();
 
     }
 

@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import OOP.zoo.animals.Animal;
 import OOP.zoo.animals.Wolf;
 import OOP.zoo.animals.Comparators.WolfComparator;
 

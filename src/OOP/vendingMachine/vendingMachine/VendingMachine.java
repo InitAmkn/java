@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import product.Product;
 
 public class VendingMachine<T extends Product> {
-    private String name;
+    // private String name;
     protected ArrayList<T> productList;
 
     public VendingMachine(String name) {
-        this.name = name;
+        // this.name = name;
         this.productList = new ArrayList<T>();
     }
 
