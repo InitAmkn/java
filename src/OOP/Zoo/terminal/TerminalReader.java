@@ -1,6 +1,6 @@
 package OOP.zoo.terminal;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class TerminalReader {
 
@@ -19,17 +19,19 @@ public class TerminalReader {
     }
 
     public void endLess() {
-        Scanner iScanner = new Scanner(System.in);
+
         Menu menu = new Menu();
+
         while (true) {
-            menu.printMenu(menu.selectAction);
-
-            String input = iScanner.nextLine();
-            commandParser.parseCommand(input);
-
-            if (input.equals("stop"))
-                break;
+            CommandExecutableFactory operationSelector = new CommandExecutableFactory();
+            String[] request = menu.view();
+            try {
+                System.out.println(Arrays.toString(request));
+                operationSelector.create(request);
+            } catch (Exception e) {
+                System.out.println("Incorrect input");
+                operationSelector = null;
+            }
         }
-        iScanner.close();
     }
 }

@@ -5,6 +5,8 @@ import OOP.zoo.animals.Snake;
 import OOP.zoo.animals.Wolf;
 import OOP.zoo.cage.AnimalCage;
 import OOP.zoo.cage.LionCage;
+import OOP.zoo.cage.SnakeCage;
+import OOP.zoo.cage.WolfCage;
 
 // import OOP.zoo.cage.LionCage;
 // import OOP.zoo.cage.SnakeCage;
@@ -12,9 +14,9 @@ import OOP.zoo.cage.LionCage;
 
 public class Zoo {
 
-    public AnimalCage<Wolf> wolfs;
-    public AnimalCage<Lion> lions;
-    public AnimalCage<Snake> snakes;
+    public AnimalCage<Wolf> wolfs = new WolfCage();
+    public AnimalCage<Lion> lions = new LionCage();
+    public AnimalCage<Snake> snakes = new SnakeCage();
 
     public Zoo() {
     };
@@ -27,8 +29,17 @@ public class Zoo {
         this.snakes = snakes;
     }
 
+    public void showAllLions() {
+        System.out.println();
+        System.out.println("All the lions in the zoo: ");
+        System.out.println(lions);
+    }
+
     public Lion takeOfLion() {
         return lions.releaseAnimalFromCage();
     }
 
+    public void addLion(Lion lion) {
+        lions.addAnimal(lion);
+    }
 }

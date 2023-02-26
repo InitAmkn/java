@@ -1,23 +1,35 @@
 package OOP.zoo.terminal;
 
-import java.util.Arrays;
-
-import OOP.zoo.animals.Animal;
 import OOP.zoo.zoo.Zoo;
 
 public class CommandExecutableFactory {
 
-    CommandExecutable create(String[] input) {
-        // CreateLionExecutable addLion = new CreateLionExecutable();
+    private Zoo zoo = new Zoo();
 
-        if (Arrays.equals(input, new String[] { "1", "1" })) {
-            return new CreateLionExecutable(
-                    input[2],
-                    Integer.parseInt(input[3]),
-                    Integer.parseInt(input[4]),
-                    Double.parseDouble(input[5]),
-                    Integer.parseInt(input[6]));
+    CommandExecutable create(String[] input) {
+
+        if (input[0].equals("add")) {
+            if (input[1].equals("lion")) {
+
+                CreateLionExecutable addLion = new CreateLionExecutable(input[2],
+                        Integer.parseInt(input[3]),
+                        Integer.parseInt(input[4]),
+                        Double.parseDouble(input[5]),
+                        Integer.parseInt(input[6]),
+                        zoo);
+                addLion.execute();
+                zoo.showAllLions();
+                return addLion;
+            }
+        }
+        if (input[0].equals("delete")) {
+            if (input[1].equals("lion")) {
+                DeleteLionExecutable deleteLion = new DeleteLionExecutable(zoo);
+                deleteLion.execute();
+                zoo.showAllLions();
+            }
         }
         return null;
     }
+
 }
