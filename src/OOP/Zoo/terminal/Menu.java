@@ -70,7 +70,7 @@ public class Menu {
                         result.addAll(inputData(enterDataAboutLion));
                         break;
                     default:
-                        incorrectInput();
+
                         break;
                 }
                 break;
@@ -83,12 +83,12 @@ public class Menu {
                         // System.err.println("You have deleted the animal");
                         break;
                     default:
-                        incorrectInput();
+
                         break;
                 }
                 break;
             default:
-                incorrectInput();
+
                 break;
         }
 

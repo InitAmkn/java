@@ -21,16 +21,16 @@ public class TerminalReader {
     public void endLess() {
 
         Menu menu = new Menu();
-
+        CommandExecutableFactory operationSelector = new CommandExecutableFactory();
         while (true) {
-            CommandExecutableFactory operationSelector = new CommandExecutableFactory();
-            String[] request = menu.view();
+
             try {
+                String[] request = menu.view();
                 System.out.println(Arrays.toString(request));
                 operationSelector.create(request);
             } catch (Exception e) {
                 System.out.println("Incorrect input");
-                operationSelector = null;
+
             }
         }
     }
