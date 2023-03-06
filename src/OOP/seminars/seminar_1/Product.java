@@ -1,4 +1,4 @@
-package OOP.seminars.seminar_1;
+package seminar_1;
 
 public class Product {
     protected String name;

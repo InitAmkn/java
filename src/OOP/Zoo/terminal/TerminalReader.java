@@ -1,37 +1,40 @@
 package OOP.zoo.terminal;
 
-import java.util.Arrays;
+import OOP.zoo.terminal.command.Command;
+import OOP.zoo.terminal.executable.CommandExecutable;
+import OOP.zoo.terminal.executable.CommandExecutableFactoryImpl;
+import OOP.zoo.terminal.menu.View;
+import OOP.zoo.terminal.parser.CommandParser;
+import OOP.zoo.zoo.Zoo;
 
 public class TerminalReader {
 
     private static TerminalReader terminalReader;
     private CommandParser commandParser;
+    private final Zoo zoo;
+    View view = new View();
+    private CommandExecutable commandExecutable;
 
-    TerminalReader(CommandParser commandParser) {
+    private TerminalReader(CommandParser commandParser, Zoo zoo) {
         this.commandParser = commandParser;
+        this.zoo = zoo;
+        endLess();
     }
 
-    public static TerminalReader newTerminalReader(CommandParser commandParser) {
+    public static TerminalReader newTerminalReader(CommandParser commandParser, Zoo zoo) {
         if (terminalReader == null) {
-            terminalReader = new TerminalReader(commandParser);
+            terminalReader = new TerminalReader(commandParser, zoo);
         }
         return terminalReader;
     }
 
     public void endLess() {
 
-        Menu menu = new Menu();
-        CommandExecutableFactory operationSelector = new CommandExecutableFactory();
         while (true) {
-
-            try {
-                String[] request = menu.view();
-                System.out.println(Arrays.toString(request));
-                operationSelector.create(request);
-            } catch (Exception e) {
-                System.out.println("Incorrect input");
-
-            }
+            String request = view.start();
+            Command command = this.commandParser.parseCommand(request);
+            this.commandExecutable = new CommandExecutableFactoryImpl(zoo).create(command);
+            commandExecutable.execute();
         }
     }
 }

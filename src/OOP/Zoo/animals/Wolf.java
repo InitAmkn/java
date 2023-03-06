@@ -1,5 +1,7 @@
 package OOP.zoo.animals;
 
+import OOP.zoo.ZooPopulation;
+
 // Создать класс Wolf, наследника класса Animal.
 
 // Создать класс WolfCage, имплементирующий интерфейс AnimalCage
@@ -8,7 +10,7 @@ package OOP.zoo.animals;
 
 public class Wolf extends Animal {
     public static final int MAX_WEIGHT = 20;
-    public static final String TYPE = "Wolf";
+    public static final String TYPE = ZooPopulation.WOLF.getName();
 
     public Wolf(String name, int yearBirth, int countLimbs, double weight) {
         super(name, yearBirth, countLimbs, weight);

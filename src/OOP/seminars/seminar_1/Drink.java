@@ -1,4 +1,4 @@
-package OOP.seminars.seminar_1;
+package seminar_1;
 
 public class Drink extends Product {
     protected int volume;

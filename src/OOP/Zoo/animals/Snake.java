@@ -1,10 +1,12 @@
 package OOP.zoo.animals;
 
+import OOP.zoo.ZooPopulation;
+
 public class Snake extends Animal {
 
     private int bodyLength;
     public static final int MAX_WEIGHT = 10;
-    public static final String TYPE = "Snake";
+    public static final String TYPE = ZooPopulation.SNAKE.getName();
 
     public Snake(String name,
             int yearBirth,

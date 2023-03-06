@@ -1,10 +1,12 @@
 package OOP.zoo.animals;
 
+import OOP.zoo.ZooPopulation;
+
 public class Lion extends Animal {
     private int maneVolume;
 
     public static final double MAX_WEIGHT = 50;
-    public static final String TYPE = "Lion";
+    public static final String TYPE = ZooPopulation.LION.getName();
 
     public Lion(String name,
             int yearBirth,
@@ -13,7 +15,6 @@ public class Lion extends Animal {
             int maneVolume) {
         super(name, yearBirth, countLimbs, weight);
         this.maneVolume = maneVolume;
-
     }
 
     public int getManeVolume() {

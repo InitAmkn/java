@@ -121,3 +121,29 @@ CreateLionExecutable и DeleteLionExecutable.
 так чтобы введенная команда парсилась, 
 на результате парсинга создавался объект CommandExecutable
 и вызывался метод execute()
+
+доделать
+- Создать класс Command, который бы инкапсулировал 
+в себе содержимое введенной команды
+- Изменить сигнатуру у интерфейса ParseCommand, 
+чтобы он вместо массива строк начал возвращать объект класса Command
+- Реализовать в нем булевские методы для проверки введенных команд
+- отредактировать класс CommandExecutableFactory, 
+убрав из него хардкод и начав принимать на вход объект Command
+
+
+- Создать класс LogingCommandExecutableFactory, 
+наследующий класс CommandExecutableFactory 
+- Переопределить единственный метод так, 
+чтобы он вызывал внутри себя метод предка, 
+но в начале и конце распечатывал информацию 
+о входных и выходных параметрах
+
+
+доделать
+- Переименовать класс  CommandExecutableFactory 
+в CommandExecutableFactoryImpl  
+- Создать интерфейс CommandExecutableFactory 
+и имплементировать от него класс CommandExecutableFactoryImpl.
+- В классе TerminalReader реализовать DIP, 
+то есть возможность менять реализации CommandExecutableFactory
